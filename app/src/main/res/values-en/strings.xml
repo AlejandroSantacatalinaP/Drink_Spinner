@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Drink_Spinner</string>
+    <string name="dNjugadors">Number of players:</string>
+    <string name="delegeix">Choose the arrow:</string>
+    <string name="dinici">Initialization</string>
+    <string name="dtitle">Shot Spinner</string>
+    <string name="començar">Start</string>
+    <string name="config">Configuration</string>
+</resources>

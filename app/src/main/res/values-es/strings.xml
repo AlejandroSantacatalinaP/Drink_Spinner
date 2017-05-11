@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Drink_Spinner</string>
+    <string name="dNjugadors">Número de jugadores:</string>
+    <string name="delegeix">Elige la flecha:</string>
+    <string name="dinici">Inizialización</string>
+    <string name="dtitle">Ruleta de Chupitos</string>
+    <string name="començar">Empezar</string>
+    <string name="config">Configuración</string>
+</resources>
