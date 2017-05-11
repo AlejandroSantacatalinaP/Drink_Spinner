@@ -76,10 +76,30 @@ public class Pantalla_Principal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 arrow.clearAnimation();
+                PararFletxa(numjug);
                 girar.setVisibility(View.VISIBLE);
                 parar.setVisibility(View.INVISIBLE);
             }
         });
+    }
+
+    public void PararFletxa(int nj){
+        int antes=0;
+        int gxj = 360/nj;
+
+        for (int i=gxj; i<360; i+=gxj){
+
+            if((nj==antes || nj>antes) &&(nj<i)){
+
+                arrow.setRotation(i-antes);
+
+            }else{
+                antes = i;
+            }
+
+        }
+
+
     }
 
     public void Rotate (ImageView img){
