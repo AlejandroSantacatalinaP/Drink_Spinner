@@ -1,10 +1,13 @@
 package com.example.alex.drink_spinner;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
@@ -15,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import java.lang.reflect.Array;
@@ -30,7 +34,10 @@ public class Pantalla_Principal extends AppCompatActivity {
     static ImageView arrow, base;
     EditText dnumJug;
     static Button parar, girar;
-    int numjug;
+    static ImageView imgf;
+    int numjug, img, imgF;
+    Intent i;
+    Random rm = new Random();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,34 +49,41 @@ public class Pantalla_Principal extends AppCompatActivity {
 
         arrow = (ImageView)findViewById(R.id.imgArrow);
         base = (ImageView)findViewById(R.id.imgBase);
-        parar=(Button)findViewById(R.id.buttonParar);
         girar = (Button)findViewById(R.id.buttonGirar);
+        parar = (Button)findViewById(R.id.buttonParar);
         dnumJug = (EditText)findViewById(R.id.dNumJug);
+        imgf = (ImageView) findViewById(R.id.imgf);
+
+        changeLanguage();
+
+        i= getIntent();
+        numjug=i.getIntExtra("numj",999);
+        img = i.getIntExtra("img",999);
+        imgF = i.getIntExtra("fons",999);
+
+        CanviarFletxa(img);
+        CanviarFons(imgF);
 
         girar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Rotate(arrow);
+                girar.setVisibility(View.INVISIBLE);
+                parar.setVisibility(View.VISIBLE);
             }
         });
-
-
+        parar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                arrow.clearAnimation();
+                girar.setVisibility(View.VISIBLE);
+                parar.setVisibility(View.INVISIBLE);
+            }
+        });
     }
 
     public void Rotate (ImageView img){
         Random rm = new Random();
-        switch (rm.nextInt(5)){
-            case 1: arrow.setImageResource(R.drawable.fletxa);
-                break;
-            case 2: arrow.setImageResource(R.drawable.fletxa3);
-                break;
-            case 3: arrow.setImageResource(R.drawable.fletxa4);
-                break;
-            case 4: arrow.setImageResource(R.drawable.fletxa5);
-                break;
-            default: arrow.setImageResource(R.drawable.fletxa);
-                break;
-        }
         //This method make spin the spinner. We have to indicate the speed.
         float ROTATE_FROM = 0.0f;
         final float ROTATE_TO = -10.0f * 360.0f;
@@ -81,6 +95,42 @@ public class Pantalla_Principal extends AppCompatActivity {
         r.setRepeatMode(Animation.RESTART);
         r.setInterpolator(getApplicationContext(), android.R.anim.linear_interpolator);
         img.startAnimation(r);
+
+    }
+    public static void CanviarFletxa(int caso){
+        switch (caso){
+            case 1:
+                arrow.setBackgroundResource(R.drawable.fletxa3);
+                break;
+            case 2:
+                arrow.setBackgroundResource(R.drawable.fletxa4);
+                break;
+            case 3:
+                arrow.setBackgroundResource(R.drawable.fletxa5);
+                break;
+            case 4:
+                arrow.setBackgroundResource(R.drawable.fletxa6);
+                break;
+            case 5:
+                arrow.setBackgroundResource(R.drawable.fletxa7);
+                break;
+        }
+
+    }
+
+    public static void CanviarFons(int caso){
+        switch (caso){
+            case 0:
+                imgf.setBackgroundResource(R.drawable.madera_defons);
+                break;
+            case 1:
+                imgf.setBackgroundResource(R.drawable.marmol_defons);
+                break;
+            case 2:
+                imgf.setBackgroundResource(R.drawable.fons);
+                break;
+        }
+
     }
     public static void changeLanguage() {
         //Detects the current phone language and adapts the app language
@@ -93,6 +143,7 @@ public class Pantalla_Principal extends AppCompatActivity {
             Locale.setDefault(localizacion);
             config.setLocale(localizacion);
             base.setBackgroundResource(R.drawable.inserte_es);
+
         }
         else if (language.startsWith("ca")) {
             localizacion = new Locale("cat", "CAT");

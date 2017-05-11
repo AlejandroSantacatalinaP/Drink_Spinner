@@ -1,44 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical">
+        android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imgArrow"
-            android:layout_width="wrap_content"
+            android:id="@+id/imgf"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-            android:layout_height="380dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/fletxa" />
-
-        <ImageView
-            android:id="@+id/imgBase"
-            android:layout_width="220dp"
-            android:layout_height="220dp"
-            android:layout_gravity="center"
-            android:background="@drawable/inserte_cat" />
-
-    </FrameLayout>
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.45">
-        <Button
-            android:id="@+id/buttonGirar"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/girar"
-            />
-        <Button
-            android:id="@+id/buttonParar"
+            android:layout_gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/imgArrow"
+                android:layout_width="wrap_content"
+
+                android:layout_height="380dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/fletxa" />
+
+            <ImageView
+                android:id="@+id/imgBase"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_gravity="center"
+                android:background="@drawable/inserte_cat" />
+
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/parar"
-            android:visibility="invisible"
-            />
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/buttonGirar"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/girar" />
+
+                <Button
+                    android:id="@+id/buttonParar"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/parar"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+        </FrameLayout>
     </FrameLayout>
 </LinearLayout>

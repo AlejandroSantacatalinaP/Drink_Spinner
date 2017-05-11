@@ -2,83 +2,162 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mylinear"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/fons"
+    android:orientation="vertical"
     tools:context="com.example.alex.drink_spinner.MainActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginBottom="70dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp">
 
-        <ImageView
+        <!--<ImageView
             android:id="@+id/imgfonstitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/fonstitol" />
-
-        <TextView
+            android:background="@drawable/fonstitol" />-->
+        <ImageView
             android:id="@+id/dtitle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/config"
-            android:textColor="@android:color/holo_red_dark"
-            android:textSize="40sp"
-            android:textStyle="bold" />
-
-
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
     </FrameLayout>
-    <TextView
-        android:id="@+id/txtNumJ"
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginBottom="20dp"
-        android:text="@string/dNjugadors"
-        android:textColor="@android:color/background_dark"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:visibility="visible" />
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/dNumJug"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:inputType="number"
-        android:maxLength="2"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:textSize="20sp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/fonsrecte" />
 
-    <TextView
-        android:id="@+id/txtElegFletx"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginBottom="20dp"
-        android:text="@string/delegeix"
-        android:textColor="@android:color/background_dark"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:visibility="visible" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="60dp">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:spinnerMode="dialog"/>
+            <TextView
+                android:id="@+id/txtNumJ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/dNjugadors"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="120dp">
+
+            <EditText
+                android:id="@+id/dNumJug"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="2"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="160dp">
+
+            <TextView
+                android:id="@+id/txtElegFletx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/delegeix"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="230dp">
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="160dp">
+
+            <TextView
+                android:id="@+id/txtElegFons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="@string/delegeixF"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="230dp">
+
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="38dp"
+                android:gravity="right"
+                android:spinnerMode="dropdown" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="47dp"
+                android:gravity="left"
+                android:spinnerMode="dropdown" />
+        </RelativeLayout>
+    </FrameLayout>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_seguent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

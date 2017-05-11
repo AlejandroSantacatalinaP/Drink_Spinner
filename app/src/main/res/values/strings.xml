@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">Drink_Spinner</string>
-    <string name="dNjugadors">Número de jugadors:</string>
+    <string name="dNjugadors">Quants jugadors sou ?</string>
     <string name="delegeix">Elegeix la fletxa:</string>
     <string name="dinici">Inicialització</string>
     <string name="dtitle">Ruleta de Xupitos</string>
     <string name="començar">Començar</string>
     <string name="config">Configuració</string>
+    <string name="camp">Has indicat quants jugadors sou ?</string>
+    <string name="delegeixF">Quin fons posem ?</string>
 </resources>
