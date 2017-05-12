@@ -5,7 +5,6 @@ import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txtnj, txtefl, txtefons;
     Spinner mySpinner, mySpinner2;
     EditText edt;
-    Button btn;
+    static Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,12 +74,16 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!edt.getText().toString().isEmpty()) {
-                    Intent principal = new Intent(MainActivity.this,Pantalla_Principal.class);
-                    principal.putExtra("numj",Integer.valueOf(edt.getText().toString()));
-                    principal.putExtra("img",mySpinner.getSelectedItemPosition());
-                    principal.putExtra("fons",mySpinner2.getSelectedItemPosition());
-                    startActivity(principal);
+                if(!edt.getText().toString().isEmpty()){
+                    if(Integer.valueOf(edt.getText().toString())<= 16) {
+                        Intent principal = new Intent(MainActivity.this, Pantalla_Principal.class);
+                        principal.putExtra("numj", Integer.valueOf(edt.getText().toString()));
+                        principal.putExtra("img", mySpinner.getSelectedItemPosition());
+                        principal.putExtra("fons", mySpinner2.getSelectedItemPosition());
+                        startActivity(principal);
+                    }else{
+                        Toast.makeText(MainActivity.this,R.string.camp,Toast.LENGTH_LONG).show();
+                    }
                 }else{
                     Toast.makeText(MainActivity.this,R.string.camp,Toast.LENGTH_LONG).show();
                 }
@@ -99,18 +102,20 @@ public class MainActivity extends AppCompatActivity {
             Locale.setDefault(localizacion);
             config.setLocale(localizacion);
             dtitle.setBackgroundResource(R.drawable.tit_es);
+            btn.setBackgroundResource(R.drawable.empezar_btn);
         }
         else if (language.startsWith("ca")) {
             localizacion = new Locale("cat", "CAT");
             Locale.setDefault(localizacion);
             config.setLocale(localizacion);
             dtitle.setBackgroundResource(R.drawable.tit_cat);
-
+            btn.setBackgroundResource(R.drawable.comenca_btn);
         }else{
             localizacion = new Locale("en", "EN");
             Locale.setDefault(localizacion);
             config.setLocale(localizacion);
             dtitle.setBackgroundResource(R.drawable.tit_en);
+            btn.setBackgroundResource(R.drawable.start_btn);
         }
     }
 }

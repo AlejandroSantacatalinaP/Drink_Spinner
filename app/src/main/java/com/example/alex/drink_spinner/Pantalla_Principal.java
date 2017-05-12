@@ -84,12 +84,13 @@ public class Pantalla_Principal extends AppCompatActivity {
     }
 
     public void PararFletxa(int nj){
-        int antes=0;
+        int antes=1;
         int gxj = 360/nj;
+        Random rm = new Random();
+        int rand = rm.nextInt(360);
+        for (int i=gxj; i<=360; i+=gxj){
 
-        for (int i=gxj; i<360; i+=gxj){
-
-            if((nj==antes || nj>antes) &&(nj<i)){
+            if((rand==antes || rand>antes) &&(rand<i)){
 
                 arrow.setRotation(i-antes);
 

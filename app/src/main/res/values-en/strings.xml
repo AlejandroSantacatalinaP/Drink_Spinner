@@ -6,7 +6,7 @@
     <string name="dtitle">Shot Spinner</string>
     <string name="començar">Start</string>
     <string name="config">Configuration</string>
-    <string name="dNjugadors">How many players ?</string>
-    <string name="camp">How many players ?</string>
+    <string name="dNjugadors">How many players ? (max. 16)</string>
+    <string name="camp">Have you indicate a correct number of players ?</string>
     <string name="delegeixF">What background ?</string>
 </resources>

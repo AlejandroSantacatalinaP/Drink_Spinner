@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Drink_Spinner</string>
-    <string name="dNjugadors">¿ Quantos jugadores ?</string>
+    <string name="dNjugadors">¿ Quantos jugadores ? (máx. 16)</string>
     <string name="delegeix">Elige la flecha:</string>
     <string name="dinici">Inizialización</string>
     <string name="dtitle">Ruleta de Chupitos</string>
     <string name="començar">Empezar</string>
     <string name="config">Configuración</string>
-    <string name="camp">¿ Has indicado el número de jugadores ?</string>
+    <string name="camp">¿ Has indicado un número correcto de jugadores ?</string>
     <string name="delegeixF">¿ Qué fondo ?</string>
 </resources>
