@@ -9,4 +9,13 @@
     <string name="config">Configuració</string>
     <string name="camp">"Has indicat un número correcte de jugadors ? "</string>
     <string name="delegeixF">Quin fons posem ?</string>
+    <string name="modeMini">Mode minijocs ?</string>
+    <string name="animalfav">al teu animal favorit.</string>
+    <string name="jugadorDerecha">al jugador/a de la teva dreta.</string>
+    <string name="jugadorIzquierda">al jugador/a de la teva esquerra.</string>
+    <string name="ppf">al teu personatge de película favorit.</string>
+    <string name="afo">al teu actual o futur ofici.</string>
+    <string name="polsaBack">POLSA PER TORNAR ENRRERE, PERÒ PRIMER BEU 2</string>
+    <string name="minijoc">Minijoc</string>
+    <string name="Descrminij_patataC">A continuació tindreu que passar el mòbil a la persona de l\'esquerra fins a que \'explote\' el mòbil. A qui li explote beurà 2.</string>
 </resources>

@@ -9,4 +9,13 @@
     <string name="config">Configuración</string>
     <string name="camp">¿ Has indicado un número correcto de jugadores ?</string>
     <string name="delegeixF">¿ Qué fondo ?</string>
+    <string name="modeMini">¿ Modo minijuegos ?</string>
+    <string name="animalfav">a tu animal favorito.</string>
+    <string name="jugadorDerecha">al jugador/a de tu derecha.</string>
+    <string name="jugadorIzquierda">al jugador/a de tu izquierda.</string>
+    <string name="ppf">A tu personaje de película favorito.</string>
+    <string name="afo">a tu actual o futuro oficio.</string>
+    <string name="polsaBack">PULSA PARA VOLVER ATRÁS, PERO PRIMERO BEBE 2</string>
+    <string name="minijoc">Minijuego</string>
+    <string name="Descrminij_patataC">A continuación tendréis que pasar el móvil a la persona de la izquiera hasta que \'explote\' el mòvil. A quién le explote beberá 2.</string>
 </resources>

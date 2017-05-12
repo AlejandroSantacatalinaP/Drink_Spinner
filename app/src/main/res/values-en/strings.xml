@@ -9,4 +9,13 @@
     <string name="dNjugadors">How many players ? (max. 16)</string>
     <string name="camp">Have you indicate a correct number of players ?</string>
     <string name="delegeixF">What background ?</string>
+    <string name="modeMini">Minigames mode ?</string>
+    <string name="animalfav">to your favorita animal.</string>
+    <string name="jugadorDerecha">to your right\'s player.</string>
+    <string name="jugadorIzquierda">to your left\'s player.</string>
+    <string name="ppf">to your favorite film character.</string>
+    <string name="afo">your current or future job.</string>
+    <string name="polsaBack">CLICK TO GO BACK, BUT FIRST DRINK 2</string>
+    <string name="minijoc">Minigame</string>
+    <string name="Descrminij_patataC">Then you have to pass the mobile to the person on the left until it \'explodes\' the mobile. Who will exploit you will drink 2.</string>
 </resources>

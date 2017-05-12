@@ -1,5 +1,6 @@
 package com.example.alex.drink_spinner;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -37,7 +38,9 @@ public class Pantalla_Principal extends AppCompatActivity {
     static ImageView imgf;
     int numjug, img, imgF;
     Intent i;
-    Random rm = new Random();
+    boolean minijocs;
+    String imita[];
+    static Random rm = new Random();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,12 +57,15 @@ public class Pantalla_Principal extends AppCompatActivity {
         dnumJug = (EditText)findViewById(R.id.dNumJug);
         imgf = (ImageView) findViewById(R.id.imgf);
 
+
         changeLanguage();
 
         i= getIntent();
         numjug=i.getIntExtra("numj",999);
         img = i.getIntExtra("img",999);
         imgF = i.getIntExtra("fons",999);
+        minijocs= i.getBooleanExtra("minijocs",false);
+
 
         CanviarFletxa(img);
         CanviarFons(imgF);
@@ -79,10 +85,33 @@ public class Pantalla_Principal extends AppCompatActivity {
                 PararFletxa(numjug);
                 girar.setVisibility(View.VISIBLE);
                 parar.setVisibility(View.INVISIBLE);
+                if(minijocs){
+
+                    ElegirMinijoc();
+                }
             }
         });
     }
+    public void ElegirMinijoc(){
+        int valor= 10;  //Numero de minijocs
+        switch(rm.nextInt(valor+1)){
+            case 0:
+                dialog(R.string.minijoc,R.string.Descrminij_patataC);
+                break;
+            default:
+                break;
 
+        }
+
+    }
+    public void Imitar(){
+        imita = new String[4];
+        imita[0]=getString(R.string.animalfav);
+        imita[1]=getString(R.string.jugadorDerecha);
+        imita[2]=getString(R.string.jugadorIzquierda);
+        imita[3]=getString(R.string.ppf);
+        imita[4]=getString(R.string.afo);
+    }
     public void PararFletxa(int nj){
         int antes=1;
         int gxj = 360/nj;
@@ -101,6 +130,21 @@ public class Pantalla_Principal extends AppCompatActivity {
         }
 
 
+    }
+    private void dialog(int title, int message) {
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent minijoc = new Intent(Pantalla_Principal.this,PatataCaliente.class);
+                        startActivity(minijoc);
+                        dialog.cancel();
+                    }
+                }).create();
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
     }
 
     public void Rotate (ImageView img){

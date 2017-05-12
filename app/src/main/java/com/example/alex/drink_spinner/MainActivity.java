@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,8 +21,9 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     static ImageView dtitle;
-    TextView txtnj, txtefl, txtefons;
+    TextView txtnj, txtefl, txtefons, txtModeMini;
     Spinner mySpinner, mySpinner2;
+    Switch sw;
     EditText edt;
     static Button btn;
     @Override
@@ -40,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
         edt = (EditText)findViewById(R.id.dNumJug);
         txtefons = (TextView)findViewById(R.id.txtElegFons);
         mySpinner2 = (Spinner)findViewById(R.id.spinner2);
-
+        txtModeMini = (TextView)findViewById(R.id.txtModeMini);
+        sw = (Switch) findViewById(R.id.switch1);
 
         changeLanguage();
 
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         txtefl.setTypeface(custom_font);
         txtnj.setTypeface(custom_font);
         txtefons.setTypeface(custom_font);
+        txtModeMini.setTypeface(custom_font);
 
         ArrayList<ConstrArray> arl = new ArrayList<ConstrArray>();
         arl.add(new ConstrArray("1", R.drawable.fletxa2_spinner));
@@ -80,6 +84,10 @@ public class MainActivity extends AppCompatActivity {
                         principal.putExtra("numj", Integer.valueOf(edt.getText().toString()));
                         principal.putExtra("img", mySpinner.getSelectedItemPosition());
                         principal.putExtra("fons", mySpinner2.getSelectedItemPosition());
+                        if (!sw.isChecked()){
+                            principal.putExtra("minijocs", false);
+                        }else
+                        {principal.putExtra("minijocs", true);}
                         startActivity(principal);
                     }else{
                         Toast.makeText(MainActivity.this,R.string.camp,Toast.LENGTH_LONG).show();
