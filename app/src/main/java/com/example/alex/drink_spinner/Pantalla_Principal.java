@@ -59,6 +59,7 @@ public class Pantalla_Principal extends AppCompatActivity {
 
 
         changeLanguage();
+        Imitar();
 
         i= getIntent();
         numjug=i.getIntExtra("numj",999);
@@ -96,16 +97,17 @@ public class Pantalla_Principal extends AppCompatActivity {
         int valor= 10;  //Numero de minijocs
         switch(rm.nextInt(valor+1)){
             case 0:
-                dialog(R.string.minijoc,R.string.Descrminij_patataC);
+                dialog(R.string.minijoc,getString(R.string.Descrminij_patataC));
                 break;
-            default:
+            case 1:
+                dialog(R.string.minijoc,getString(R.string.Descrminij_imita)+imita[rm.nextInt(5)]);
                 break;
 
         }
 
     }
     public void Imitar(){
-        imita = new String[4];
+        imita = new String[5];
         imita[0]=getString(R.string.animalfav);
         imita[1]=getString(R.string.jugadorDerecha);
         imita[2]=getString(R.string.jugadorIzquierda);
@@ -131,7 +133,7 @@ public class Pantalla_Principal extends AppCompatActivity {
 
 
     }
-    private void dialog(int title, int message) {
+    private void dialog(int title, String message) {
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle(title)
                 .setMessage(message)

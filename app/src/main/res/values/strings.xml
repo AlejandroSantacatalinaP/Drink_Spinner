@@ -17,4 +17,5 @@
     <string name="polsaBack">POLSA PER TORNAR ENRRERE, PERÒ PRIMER BEU 2</string>
     <string name="minijoc">Minijoc</string>
     <string name="Descrminij_patataC">A continuació tindreu que passar el mòbil a la persona de l\'esquerra fins a que \'explote\' el mòbil. A qui li explote beurà 2.</string>
+    <string name="Descrminij_imita">(Llegir en veu alta) Ara tens que imitar el que aparega al final de la linia, en cas de que ningú ho encerte abans de 5 minuts, beus 2. (No llegir en veu alta) Tens que imitar:</string>
 </resources>
