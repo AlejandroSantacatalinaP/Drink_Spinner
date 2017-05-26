@@ -19,4 +19,5 @@
     <string name="minijoc">Minijuego</string>
     <string name="Descrminij_patataC">A continuación tendréis que pasar el móvil a la persona de la izquiera hasta que \'explote\' el mòvil. A quién le explote beberá 2.</string>
     <string name="Descrminij_imita">(Leer en voz alta) Ahora tienes que imitar lo que aparezca al final de la línea, en caso de que nadie lo acierte antes de 5 minutos, bebes dos. (No leer en voz alta) Tienes que imitar:</string>
+    <string name="Descrminij_escondite">Vais a jugar al escondite. Tendreis 1 minuto para esconderse y el jugador elegido por la ruleta, tendrá que encontrar a todos en un máximo de 15 minutis. El número de personas no encontradas, será el número a beber.</string>
 </resources>

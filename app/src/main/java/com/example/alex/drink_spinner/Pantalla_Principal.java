@@ -97,12 +97,14 @@ public class Pantalla_Principal extends AppCompatActivity {
         int valor= 10;  //Numero de minijocs
         switch(rm.nextInt(valor+1)){
             case 0:
-                dialog(R.string.minijoc,getString(R.string.Descrminij_patataC));
+                dialog(R.string.minijoc,getString(R.string.Descrminij_patataC),0);
                 break;
             case 1:
-                dialog(R.string.minijoc,getString(R.string.Descrminij_imita)+imita[rm.nextInt(5)]);
+                dialog(R.string.minijoc,getString(R.string.Descrminij_imita)+imita[rm.nextInt(5)],1);
                 break;
-
+            case 2:
+                dialog(R.string.minijoc,getString(R.string.Descrminij_escondite),2);
+                break;
         }
 
     }
@@ -133,15 +135,20 @@ public class Pantalla_Principal extends AppCompatActivity {
 
 
     }
-    private void dialog(int title, String message) {
+    private void dialog(int title, String message,final int minij) {
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        Intent minijoc = new Intent(Pantalla_Principal.this,PatataCaliente.class);
-                        startActivity(minijoc);
+                        if (minij == 0) {
+                            Intent minijoc = new Intent(Pantalla_Principal.this, PatataCaliente.class);
+                            startActivity(minijoc);
+                        }else if (minij == 2){
+                            Intent minijoc = new Intent(Pantalla_Principal.this, CronometroInverso.class);
+                            startActivity(minijoc);
+                        }
                         dialog.cancel();
                     }
                 }).create();
